@@ -9,6 +9,7 @@ public class AddressBook {
         contactNewPerson();
         editContactDetail();
         clearConsole();
+        multiplePersonDetail();
     }
     public static void personDetail()
     {
@@ -73,5 +74,23 @@ public class AddressBook {
         {
             e.printStackTrace();
         }
+    }
+    public static void multiplePersonDetail()
+    {
+        List<String> langs = new ArrayList<>();
+
+        langs.add("Samppriti");
+        langs.add("Santragachi Station");
+        langs.add("kolkata");
+        langs.add("West Bengal");
+        langs.add("96748523145");
+        langs.add("sampritirc@hmail.com");
+
+        for (String lang : langs) {
+
+            System.out.printf("%s ", lang);
+        }
+
+        System.out.println();
     }
 }
