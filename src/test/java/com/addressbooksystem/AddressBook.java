@@ -8,6 +8,7 @@ public class AddressBook {
         personDetail();
         contactNewPerson();
         editContactDetail();
+        clearConsole();
     }
     public static void personDetail()
     {
@@ -57,5 +58,20 @@ public class AddressBook {
     {
         System.out.println("After Editing the Existed Contact The list of details are given below:");
         contactNewPerson();
+    }
+    public static void clearConsole()
+    {
+        try
+        {
+            final String name_person = System.getProperty("name_person.name");
+            if (name_person.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+        }
+        catch (final Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
