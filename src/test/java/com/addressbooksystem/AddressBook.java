@@ -9,6 +9,8 @@ public class AddressBook {
         contactNewPerson();
         editContactDetail();
         clearConsole();
+        multiplePersonDetail();
+        multiDetailAddressBook();
     }
     public static void personDetail()
     {
@@ -73,5 +75,49 @@ public class AddressBook {
         {
             e.printStackTrace();
         }
+    }
+    public static void multiplePersonDetail()
+    {
+        List<String> langs = new ArrayList<>();
+
+        langs.add("Samppriti");
+        langs.add("Santragachi Station");
+        langs.add("kolkata");
+        langs.add("West Bengal");
+        langs.add("96748523145");
+        langs.add("sampritirc@hmail.com");
+
+        for (String lang : langs) {
+
+            System.out.printf("%s ", lang);
+        }
+
+        System.out.println();
+    }
+    public static void multiDetailAddressBook()
+    {
+        // creating a My HashTable Dictionary
+        Hashtable<String, String> my_dict = new Hashtable<String, String>();
+
+        // Using a few dictionary Class methods
+        // using put method
+        my_dict.put("01", "Rakesh Jaiswal");
+        my_dict.put("02", "Amhastreet");
+        my_dict.put("03", "Kolkata");
+        my_dict.put("04", "West Bengal");
+        my_dict.put("05", "7859632145");
+        my_dict.put("06", "srcrj0747@gmail.com");
+
+
+        // using get() method
+        System.out.println("\nValue at key = 01 : " + my_dict.get("01"));
+        System.out.println("Value at key = 02 : " + my_dict.get("02"));
+        System.out.println("Value at key = 03 : " + my_dict.get("03"));
+        System.out.println("Value at key = 04 : " + my_dict.get("04"));
+        System.out.println("Value at key = 05 : " + my_dict.get("05"));
+        System.out.println("Value at key = 06 : " + my_dict.get("06"));
+
+
+        System.out.println("\nSize of my_dict : " + my_dict.size());
     }
 }
