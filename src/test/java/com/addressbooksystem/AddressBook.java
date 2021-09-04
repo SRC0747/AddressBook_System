@@ -32,6 +32,25 @@ public class AddressBook {
         details.add(new MultipleDetail("Abhishek""Baguihati","Kolkata","WestBengal","7044589936","abhi37@gmail.com"));
         details.add(new MultipleDetail("Sampriti","Belepole","Howrah","WestBengal","7044585321","srcsrk0747@gmail.com"));
         details.stream().filter(details -> details.city == "Kolkata" && details -> details.state == "WestBengal").forEach(details -> System.out.println(details.name));
+        
+         //Dictionary of City and Person.
+        HashTable <City,Person> mydict_1 = new  Hashtable<City,Person>();
+        //put method() to print output.
+        mydict_1.put("Kolkata","Rakesh");
+        mydict_1.put("Howrah","Sampriti");
+        //get method() to take input.
+        System.out.println("\nPerson at Kolkata is:"+mydict_1.get("Kolkata"));
+        System.out.println("\nPerson at Howrah is:"+mydict_1.get("Howrah"));
+
+
+        //Dictionary of State and Person.
+        HashTable <State,Person> mydict_1 = new  Hashtable<State, Person>();
+        //put method() to print output.
+        mydict_1.put("West Bengal","Rakesh");
+        mydict_1.put(Mumbai","Sampriti");
+        //get method() to take input.
+        System.out.println("\n Person at West Bengal is:"+mydict_1.get("West Bengal"));
+        System.out.println("\n Person at Mumbai is:"+mydict_1.get("Mumbai"));
     }
     public static void personDetail()
     {
