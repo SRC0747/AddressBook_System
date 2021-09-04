@@ -1,7 +1,20 @@
 package com.addressbooksystem;
 import java.util.Scanner;
 import java.io.Console;
+import java.util.*;
+import java.util.stream.Collectors;
 
+class MultipleDetail{
+    String name,address,city,state,phno,email;
+    public MultipleDetail(String name, String address, String city, String state, String phno, String email) {
+        this.name = name;
+        this.address = address;
+        this.city = city ;
+        this.state = state;
+        this.phno = phno;
+        this.email = email;
+    }
+}
 public class AddressBook {
     public static void main(String[] args){
         System.out.println("Welcome to Address Book System.");
@@ -12,6 +25,13 @@ public class AddressBook {
         multiplePersonDetail();
         multiDetailAddressBook();
         System.out.println(equals(AddressBook obj));
+        
+         List<MultipleDetail> details = new ArrayList<MultipleDetail>();
+        //Adding Details
+        details.add(new MultipleDetail("Rakesh Jaiswal","Amhastreet","Kolkata","WestBengal","9632457896","rjsrc@gmail.com"));
+        details.add(new MultipleDetail("Abhishek""Baguihati","Kolkata","WestBengal","7044589936","abhi37@gmail.com"));
+        details.add(new MultipleDetail("Sampriti","Belepole","Howrah","WestBengal","7044585321","srcsrk0747@gmail.com"));
+        details.stream().filter(details -> details.city == "Kolkata" && details -> details.state == "WestBengal").forEach(details -> System.out.println(details.name));
     }
     public static void personDetail()
     {
