@@ -71,6 +71,11 @@ public class AddressBook {
                 .toArray(String[]::new);
         // Sorted array
         System.out.println("Sorted : " + Arrays.toString(strArray));
+
+        String[] name = {"Rakesh", "Sampriti", "Abhishek"}.toCharArray();
+        String[] city = {"Kolkata", "Howrah"}.toCharArray();
+        SortByPattern(name, city);
+        System.out.println(String.valueOf(name));
     }
     public static void personDetail()
     {
@@ -193,4 +198,34 @@ public class AddressBook {
         } // end else
         return super.equals(obj);
     }
-}
+
+    //Displaying Person's nName alphabetically Sorting Cities.
+    public static void SortByPattern(String name, String city) {
+        String[] name = {"Rakesh", "Sampriti", "Abhishek"};
+        String[] city = {"Kolkata", "Howrah"};
+        static int MAX_CHAR = 26;
+
+        // Sort str according to the order defined by pattern.
+        static void sortByPattern ( char[] name, char[] city)
+        {
+            // Create a count array stor
+            // count of characters in str.
+            int count[] = new int[MAX_CHAR];
+
+            // Count number of occurrences of
+            // each character in str.
+            for (int i = 0; i < name.length; i++) {
+                count[name[i] - 'a']++;
+            }
+            // Traverse the pattern and print every characters
+            // same number of times as it appears in str. This
+            // loop takes O(m + n) time where m is length of
+            // pattern and n is length of str.
+            int index = 0;
+            for (int i = 0; i < city.length; i++) {
+                for (int j = 0; j < count[city[i] - 'a']; j++) {
+                    name[index++] = city[i];
+                }
+            }
+        }
+    }
