@@ -55,11 +55,22 @@ public class AddressBook {
         //Using Java Stream to count City to get person's contact.
         long count = Stream.of("Kolkata","Howrah")
                 .collect(Collectors.counting());
-        System.out.printf("There are %d words in the stream %n", count);
+        System.out.printf("There are %d persons in the stream %n", count);
         //Using Java Stream to count State to get person's contact.
         long count = Stream.of("WestBengal","Mumbai")
                 .collect(Collectors.counting());
-        System.out.printf("There are %d words in the stream %n", count);
+        System.out.printf("There are %d persons in the stream %n", count);
+
+        //Sort the Persons name in alphabetic order using console.
+        // Unsorted string array
+        String[] strArray = { "Rakesh","Abhishek","Sampriti" };
+
+        // Sorting the strings
+        strArray = Stream.of(strArray)
+                .sorted()
+                .toArray(String[]::new);
+        // Sorted array
+        System.out.println("Sorted : " + Arrays.toString(strArray));
     }
     public static void personDetail()
     {
