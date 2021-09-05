@@ -55,11 +55,11 @@ public class AddressBook {
         //Using Java Stream to count City to get person's contact.
         long count = Stream.of("Kolkata","Howrah")
                 .collect(Collectors.counting());
-        System.out.printf("There are %d words in the stream %n", count);
+        System.out.printf("There are %d persons in the stream %n", count);
         //Using Java Stream to count State to get person's contact.
         long count = Stream.of("WestBengal","Mumbai")
                 .collect(Collectors.counting());
-        System.out.printf("There are %d words in the stream %n", count);
+        System.out.printf("There are %d persons in the stream %n", count);
     }
     public static void personDetail()
     {
