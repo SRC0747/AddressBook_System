@@ -51,6 +51,15 @@ public class AddressBook {
                 //get method() to take input.
                 System.out.println("\n Person at West Bengal is:"+mydict_1.get("West Bengal"));
         System.out.println("\n Person at Mumbai is:"+mydict_1.get("Mumbai"));
+
+        //Using Java Stream to count City to get person's contact.
+        long count = Stream.of("Kolkata","Howrah")
+                .collect(Collectors.counting());
+        System.out.printf("There are %d words in the stream %n", count);
+        //Using Java Stream to count State to get person's contact.
+        long count = Stream.of("WestBengal","Mumbai")
+                .collect(Collectors.counting());
+        System.out.printf("There are %d words in the stream %n", count);
     }
     public static void personDetail()
     {
