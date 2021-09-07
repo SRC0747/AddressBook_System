@@ -4,6 +4,33 @@ import java.io.Console;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader; // reads from dat file
+import java.io.FileWriter; // writes from dat file
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public interface Inter
+{
+    //Interface class
+    public void addContact();
+    public void deleteContact();
+    public void searchContact();
+    public void readFile();
+}
+
+public class Contact
+{
+    static String name;
+    static String lastName;
+    static String address;
+    static String number;
+
+    public Contact () { }
+}
+
 class MultipleDetail{
     String name,address,city,state,phno,email;
     public MultipleDetail(String name, String address, String city, String state, String phno, String email) {
@@ -15,7 +42,7 @@ class MultipleDetail{
         this.email = email;
     }
 }
-public class AddressBook {
+public class AddressBook extends Contact implements Inter{
     public static void main(String[] args){
         System.out.println("Welcome to Address Book System.");
         personDetail();
@@ -229,3 +256,51 @@ public class AddressBook {
             }
         }
     }
+
+    @Override
+    public void deleteContact() { }
+
+    @Override
+    public void searchContact() { }
+
+    @Override
+    public void addContact()
+    {
+        String details = null;
+        System.out.println("Enter new contact i.e name:number:lastname ");
+        InputStreamReader converter = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(converter);
+
+        try
+        {
+            details=in.readLine();
+            String[] tokens =details.split(":"); // eg david :098:Needham
+            name= tokens[0];
+            lastName = tokens[1];
+            address = tokens[2];
+            number = tokens[3];
+        }  catch (IOException e1) { }
+
+        FileWriter fw = null; // writes contact info to the dat file
+        try
+        {
+            fw = new FileWriter("data.dat");
+            fw.write(name);
+            fw.write(lastName);
+            fw.write(address);
+            fw.write(number);
+        } catch (IOException e) { }
+        BufferedWriter bw = new BufferedWriter(fw);
+    }
+
+    public void readFile() // reads contacts from dat file
+    {
+        try
+        {
+            BufferedReader in = new BufferedReader(new FileReader("data.dat"));
+            String str;
+            while ((str = in.readLine()) != null)
+            {}
+        } catch(Exception ex) { }
+    }
+}
